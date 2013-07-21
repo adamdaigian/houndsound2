@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HoundSound</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src="https://connect.soundcloud.com/sdk.js"></script>
+    <script src="http://connect.soundcloud.com/2/latest.min.js"></script>
+    <script src="js/favs.js"></script>
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Project name</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+             <!-- <a href="#" class="connect"><img src="http://connect.soundcloud.com/2/btn-connect-m.png"></a>
+             <p class="navbar-text pull-right">Hello, <span id="username"></span></p> -->
+            </p>
+            <ul class="nav">
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <script type="text/javascript" charset="utf-8">
+            SC.connectForm({
+              size:         "l",                 // size of the button (s, m, l)
+              client_id:    "45e1f7e473518eccbcb6bc27ecac7c44",
+              redirect_uri: "http://houndsound.site44.com/callback.html",
+              flow:         "code",
+              connected: function(){
+                SC.get("/me", function(me){
+                  _uid = me.id;
+                  getUserFollowings(_uid)
+                });
+              }
+            });
+          </script>
+        <div class="span9 pull-left">
+          <div id="target"></div>
+        </div>
+
+
+      <div class="span3 pull-right">
+        <div class="">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Genres</li>
+              <li><a href="#" class="genre">Chill</a></li>
+              <li><a href="#" class="genre">Chillwave</a></li>
+              <li><a href="#" class="genre">Balearic</a></li>
+              <li><a href="#" class="genre">House</a></li>
+              <li><a href="#" class="genre">Downtempo</a></li>
+            </ul>
+          </div><!--/.well -->
+
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Sidebar</li>
+              <!-- <li class="active"><a href="#">Link</a></li> -->
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+            </ul>
+          </div><!--/.well -->
+
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Sidebar</li>
+              <!-- <li class="active"><a href="#">Link</a></li> -->
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/affix -->
+      </div><!--/span-->
+
+</div><!--/row-->
+
+    </div><!--/.fluid-container-->
+
+
+<!-- <script src="js/underscore.js"></script>
+<script src="js/backbone.js"></script>
+<script src="js/main.js"></script> -->
+  </body>
+</html>
